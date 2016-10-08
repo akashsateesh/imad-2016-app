@@ -19,4 +19,10 @@ body {
 .img-medium {
     height: 200px;
 }
-
+.container
+        {
+        color:red;
+        margin: 0 auto;
+        padding-left:80px;
+        padding-right:80px;
+        }
