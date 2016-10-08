@@ -29,7 +29,7 @@ var html=`<html>
     <body>
         <link href="/ui/style.css" rel="stylesheet" />
         <title>Article two</title>
-        <h1>Hi displaying article two</h1>
+        <h1>Hi displaying article so ya</h1>
          ${content}
     </body>
 </html>`;
