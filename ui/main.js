@@ -4,7 +4,7 @@ e.innerHTML="yes got u";
 var madi=document.getElementById("madi");
 var marginleft=0;
 function moveright(){
-    marginleft+=10;
+    marginleft+=1;
     madi.style.marginLeft=marginleft+'px';
 }
 madi.onclick=function(){
