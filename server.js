@@ -31,7 +31,7 @@ app.post('/login',function(req,res){
   userid=(userid).substring(6,userid.search(/\d/));
   pass=req.body.password;
   pool.query('select * from user where username=? AND password=?',[req.body.username,pass],function(err,result){
-    if(err || result.length==0)
+    if(err || result.length===0)
   {
       res.send('Incoorect Login');
       setTimeout(function(){
@@ -41,7 +41,7 @@ app.post('/login',function(req,res){
   }         
     else{
       pool.query('select name,farmer_id,ph_no from farmer where name=?;select *from product;select *from commodity',userid,function(err,result){
-    if(err || result.length==0){
+    if(err || result.length===0){
      res.sendFile(path.join(__dirname,'ui','hello.html'));
      return;
     }
@@ -165,7 +165,7 @@ app.post('/farmer/buy', function (req, res) {
   if(j>0)
   {
       pool.query('select * from sell where p_id=?',j,function(err,result){
-        if(err || result.length==0)res.send(ht);
+        if(err || result.length===0)res.send(ht);
         else{
             var htm=` <div class="container">
                       <table class="table table-bordered">
@@ -202,6 +202,7 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/ui/agri11.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'agri11.jpg'));
 });
+
 app.post('/search', function (req, res) {
  res.sendFile(path.join(__dirname, 'ui', 'hello.html'));
 });
