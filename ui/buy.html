@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Buy</title>
+<link href="\ui\style.css" rel="stylesheet"/>
+</head>  
+    <body>
+     <div class="container">
+         <h4 id="para"></h4>
+         </div>
+    <br><br>
+    <div class="container">
+        <form method="GET" action="http://localhost:8080/farmer/buy/yes>" <button class="btn btn-success" id="yes"  type="submit">Yes</button>
+         </form>
+         <button class="btn btn-success" id="no"  type="submit">No</button>
+    </div>
+    <script type="text/javascript">
+     // function(){
+
+      var request=new XMLHttpRequest();
+   
+    request.onreadystatechange=function(){
+        if(request.readyState==XMLHttpRequest.DONE){
+           if(request.status==200)
+            {
+                var str="";
+                var cost="";
+                c=request.responseText;
+                var i=c.indexOf(":",15);i+=2;
+                str=c.substring(i,c.indexOf(`"`,i));
+                i=c.indexOf(":",i);i++;
+                cost=c.substring(i,c.indexOf(`"`,i));
+                var quantity=c.substring(c.indexOf("}",1)+1);
+                var j=parseInt(quantity);
+                i=parseInt(cost);
+                document.getElementById("para").innerHTML=`You brought ${quantity} of item ${str} and total cost is ${i*j}
+                                                            <br><h4>Do you wish to continue</h4>`;
+
+            }
+    }}
+        request.open('GET','http://localhost:8080/request/buy',true);
+        request.send(null);  
+        </script>
+    </body>
+    
+</html>
