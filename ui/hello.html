@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>farmer</title>
+<link href="\ui\style.css" rel="stylesheet"/>
+</head>
+<body style="color:white;background-image:url('http://localhost:8080/ui/agri11.jpg');">
+    <hr/>
+    <div class="container">
+    <div class="btn-group btn-group-lg btn-group-justified btn-group-fill-height">
+        <button class="btn btn-default" id="about"  type="submit">About</button>
+        <button class="btn btn-default" id="how"    type="submit">How to use</button>
+        <button class="btn btn-default" id="farmer" type="submit">Farmer</button>
+        <button class="btn btn-default" id="trader" type="submit">Trader</button>
+        <button class="btn btn-default" id="dbms"   type="submit">Data base Admin</button>
+        </div>
+       <br><br/>
+   <div id="openlogin" class="container">
+       <form class="form-vertical" method="POST" action="http://localhost:8080/login">
+  <div class="container">
+    <label for="inputuser" class="col-sm-2 control-label">User_Id</label>
+    <div class="col-sm-4">
+      <input type="username" class="form-control" name="username"  id="inputuser" placeholder="User_Name">
+    </div>
+  </div><br/>
+  <div class="container">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-4">
+      <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password">
+    </div>
+  </div>
+  <div class="container">
+    <div class="col-sm-offset-2 col-sm-4">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default" id="log" >Log in</button>
+    </div>
+  </div>
+</form></div>
+</div>
+<script type="text/javascript" src="/ui/main.js">
+        </script>
+</body>
+</html>
